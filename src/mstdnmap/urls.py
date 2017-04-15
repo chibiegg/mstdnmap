@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from mstdnmap import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^map.json$', views.map_json, name="map_json"),
+    url(r'^$', views.index),
 ]

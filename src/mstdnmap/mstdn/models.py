@@ -14,7 +14,7 @@ class Instance(models.Model):
         return self.hostname
 
     def get_timeline(self):
-        url = "https://{0}/api/v1/timelines/public".format(self.hostname)
+        url = "https://{0}/api/v1/timelines/public?limit=40".format(self.hostname)
         response = requests.get(url)
         response.raise_for_status()
         return response.json()
